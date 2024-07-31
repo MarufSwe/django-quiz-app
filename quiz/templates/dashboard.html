@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .card-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+        }
+        .card-body i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .python-card {
+            background: linear-gradient(135deg, #2e86de, #74b9ff);
+        }
+        .java-card {
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+        }
+        .c-card {
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+        }
+        .html-card {
+            background: linear-gradient(135deg, #f39c12, #f1c40f);
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Select a Quiz Topic</h1>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card python-card" onclick="window.location.href='{% url 'quiz-view' topic_name='Python' %}'">
+                    <div class="card-body text-center">
+                        <i class="fab fa-python"></i>
+                        <h5 class="card-title">Python</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card java-card" onclick="window.location.href='{% url 'quiz-view' topic_name='Java' %}'">
+                    <div class="card-body text-center">
+                        <i class="fab fa-java"></i>
+                        <h5 class="card-title">Java</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card c-card" onclick="window.location.href='{% url 'quiz-view' topic_name='C' %}'">
+                    <div class="card-body text-center">
+                        <i class="fas fa-code"></i>
+                        <h5 class="card-title">C</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card html-card" onclick="window.location.href='{% url 'quiz-view' topic_name='HTML' %}'">
+                    <div class="card-body text-center">
+                        <i class="fab fa-html5"></i>
+                        <h5 class="card-title">HTML</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
