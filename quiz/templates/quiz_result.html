@@ -1,17 +1,73 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Quiz Result</title>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container my-5">-->
+<!--        <h1 class="text-center mb-4">Results for {{ topic.name }}</h1>-->
+<!--        <div class="alert alert-info text-center">-->
+<!--            <h4>Your Score: {{ score }} out of 10</h4>-->
+<!--            <p>Time Taken: {{ time_taken }}</p>-->
+<!--        </div>-->
+<!--        <div class="text-center">-->
+<!--            <a href="{% url 'dashboard' %}" class="btn btn-primary">Go Back to Dashboard</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Result</title>
+    <title>Results for {{ topic.name }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container my-5">
         <h1 class="text-center mb-4">Results for {{ topic.name }}</h1>
         <div class="alert alert-info text-center">
-            <h4>Your Score: {{ score }} out of 10</h4>
+            <h4>Your Score: {{ score }} out of {{ total_questions }}</h4>
             <p>Time Taken: {{ time_taken }}</p>
+        </div>
+        <div class="mb-4">
+            <h4 class="text-center">Questions and Answers</h4>
+            <ul class="list-group">
+                {% for detail in question_details %}
+                <li class="list-group-item">
+                    <h5>{{ forloop.counter }}. {{ detail.question.question_text }}</h5>
+                    <ul>
+                        <li class="{% if detail.selected_answer == 'A' %}font-weight-bold{% endif %}">
+                            <strong>A:</strong> {{ detail.question.option_a }}
+                        </li>
+                        <li class="{% if detail.selected_answer == 'B' %}font-weight-bold{% endif %}">
+                            <strong>B:</strong> {{ detail.question.option_b }}
+                        </li>
+                        <li class="{% if detail.selected_answer == 'C' %}font-weight-bold{% endif %}">
+                            <strong>C:</strong> {{ detail.question.option_c }}
+                        </li>
+                        <li class="{% if detail.selected_answer == 'D' %}font-weight-bold{% endif %}">
+                            <strong>D:</strong> {{ detail.question.option_d }}
+                        </li>
+                    </ul>
+                    <p class="mb-0">
+                        <strong>Correct Answer:</strong> {{ detail.correct_answer }} -
+                        {% if detail.is_correct %}
+                        <span class="text-success">Correct</span>
+                        {% else %}
+                        <span class="text-danger">Incorrect</span>
+                        {% endif %}
+                    </p>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
         <div class="text-center">
             <a href="{% url 'dashboard' %}" class="btn btn-primary">Go Back to Dashboard</a>
