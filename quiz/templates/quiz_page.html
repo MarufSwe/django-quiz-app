@@ -6,18 +6,39 @@
     <title>Quiz on {{ topic.name }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            padding-top: 80px; /* Add padding to account for the fixed header */
+        }
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+<!--            z-index: 1000;-->
+<!--            padding: 10px 0;-->
+<!--            box-shadow: 0 2px 4px rgba(0,0,0,0.1);-->
+        }
         .timer {
             font-size: 1.5rem;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 20px;
+            margin: 0;
         }
+<!--        .quiz-container {-->
+<!--            padding: 20px;-->
+<!--            max-height: calc(100vh - 100px); /* Adjust this value if the header height changes */-->
+<!--            overflow-y: auto;-->
+<!--        }-->
     </style>
 </head>
 <body>
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Quiz on {{ topic.name }}</h1>
+    <div class="fixed-header text-center">
+        <h1 class="mb-0">Quiz on {{ topic.name }}</h1>
         <div class="timer" id="timer">10:00</div>
+    </div>
+    <div class="container quiz-container mt-4 mb-2">
         <form id="quiz-form" method="post" action="{% url 'quiz-result' topic_name=topic.name %}">
             {% csrf_token %}
             {% for question in questions %}
@@ -66,7 +87,16 @@
             }, 1000);
         }
 
+        // Start the timer when the page is loaded
         startTimer();
+
+        // Optional: Reset timer if user navigates back
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                location.reload();
+            }
+        };
     </script>
 </body>
 </html>
+

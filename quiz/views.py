@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Topic, Question, Topic, Question
-from django.views.decorators.csrf import csrf_protect
+from .models import Topic, Question, Topic, Question, Quiz, QuizQuestion
 from datetime import timedelta
+from django.utils.cache import add_never_cache_headers
 
 
 def dashboard(request):
@@ -10,13 +10,16 @@ def dashboard(request):
 
 def quiz_view(request, topic_name):
     topic = get_object_or_404(Topic, name=topic_name)
-    questions = Question.objects.filter(topic=topic).order_by('?')[:10]  # Shuffle and get 10 questions
+    questions = Question.objects.filter(topic=topic).order_by('?')[:10]  # Get 10 random questions
 
-    context = {
+    response = render(request, 'quiz_page.html', {
         'topic': topic,
         'questions': questions,
-    }
-    return render(request, 'quiz_page.html', context)
+    })
+
+    # Add headers to prevent caching (new questions and time for redirect to quiz page)
+    add_never_cache_headers(response)
+    return response
 
 
 def quiz_result(request, topic_name):
