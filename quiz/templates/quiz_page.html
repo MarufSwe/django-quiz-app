@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ topic.name }} Quiz</title>
+    <title>Quiz on {{ topic.name }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .timer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container my-5">
         <h1 class="text-center mb-4">Quiz on {{ topic.name }}</h1>
-        <form id="quiz-form" method="post" action="{% url 'quiz-result' %}">
+        <div class="timer" id="timer">10:00</div>
+        <form id="quiz-form" method="post" action="{% url 'quiz-result' topic_name=topic.name %}">
             {% csrf_token %}
             {% for question in questions %}
             <div class="mb-4">
@@ -26,14 +35,38 @@
                 </div>
             </div>
             {% endfor %}
+            <input type="hidden" name="time_taken" id="time-taken">
             <div class="text-center mt-4">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let timeLeft = 10 * 60; // 10 minutes in seconds
+        const timerElement = document.getElementById('timer');
+        const quizForm = document.getElementById('quiz-form');
+        const timeTakenInput = document.getElementById('time-taken');
+
+        function startTimer() {
+            const timerInterval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    timeTakenInput.value = 10 * 60; // Full time taken in seconds
+                    quizForm.submit();
+                } else {
+                    timeTakenInput.value = (10 * 60) - timeLeft;
+                }
+
+                timeLeft--;
+            }, 1000);
+        }
+
+        startTimer();
+    </script>
 </body>
 </html>
