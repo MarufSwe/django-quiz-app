@@ -1,77 +1,92 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Quiz Result</title>-->
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-<!--</head>-->
-<!--<body>-->
-<!--    <div class="container my-5">-->
-<!--        <h1 class="text-center mb-4">Results for {{ topic.name }}</h1>-->
-<!--        <div class="alert alert-info text-center">-->
-<!--            <h4>Your Score: {{ score }} out of 10</h4>-->
-<!--            <p>Time Taken: {{ time_taken }}</p>-->
-<!--        </div>-->
-<!--        <div class="text-center">-->
-<!--            <a href="{% url 'dashboard' %}" class="btn btn-primary">Go Back to Dashboard</a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</body>-->
-<!--</html>-->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results for {{ topic.name }}</title>
+    <title>Quiz Results</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .fixed-top-content {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        .scrollable-questions {
+            max-height: calc(100vh - 160px);
+            overflow-y: auto;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect-answer {
+            color: red;
+            font-weight: bold;
+        }
+        .no-answer {
+            color: yellow;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div class="container my-5">
+<div class="container my-5">
+    <div class="fixed-top-content">
         <h1 class="text-center mb-4">Results for {{ topic.name }}</h1>
         <div class="alert alert-info text-center">
             <h4>Your Score: {{ score }} out of {{ total_questions }}</h4>
             <p>Time Taken: {{ time_taken }}</p>
         </div>
-        <div class="mb-4">
-            <h4 class="text-center">Questions and Answers</h4>
-            <ul class="list-group">
-                {% for detail in question_details %}
-                <li class="list-group-item">
-                    <h5>{{ forloop.counter }}. {{ detail.question.question_text }}</h5>
-                    <ul>
-                        <li class="{% if detail.selected_answer == 'A' %}font-weight-bold{% endif %}">
-                            <strong>A:</strong> {{ detail.question.option_a }}
-                        </li>
-                        <li class="{% if detail.selected_answer == 'B' %}font-weight-bold{% endif %}">
-                            <strong>B:</strong> {{ detail.question.option_b }}
-                        </li>
-                        <li class="{% if detail.selected_answer == 'C' %}font-weight-bold{% endif %}">
-                            <strong>C:</strong> {{ detail.question.option_c }}
-                        </li>
-                        <li class="{% if detail.selected_answer == 'D' %}font-weight-bold{% endif %}">
-                            <strong>D:</strong> {{ detail.question.option_d }}
-                        </li>
-                    </ul>
-                    <p class="mb-0">
-                        <strong>Correct Answer:</strong> {{ detail.correct_answer }} -
-                        {% if detail.is_correct %}
-                        <span class="text-success">Correct</span>
-                        {% else %}
-                        <span class="text-danger">Incorrect</span>
-                        {% endif %}
-                    </p>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="text-center">
-            <a href="{% url 'dashboard' %}" class="btn btn-primary">Go Back to Dashboard</a>
-        </div>
     </div>
+
+    <div class="scrollable-questions mb-4">
+        {% for user_answer in user_answers %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ forloop.counter }}. {{ user_answer.question.question_text }}</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <strong class="{% if user_answer.question.correct_answer == 'A' %}correct-answer{% elif user_answer.selected_answer == 'A' %}incorrect-answer{% endif %}">
+                            A: {{ user_answer.question.option_a }}
+                        </strong>
+                    </li>
+                    <li>
+                        <strong class="{% if user_answer.question.correct_answer == 'B' %}correct-answer{% elif user_answer.selected_answer == 'B' %}incorrect-answer{% endif %}">
+                            B: {{ user_answer.question.option_b }}
+                        </strong>
+                    </li>
+                    <li>
+                        <strong class="{% if user_answer.question.correct_answer == 'C' %}correct-answer{% elif user_answer.selected_answer == 'C' %}incorrect-answer{% endif %}">
+                            C: {{ user_answer.question.option_c }}
+                        </strong>
+                    </li>
+                    <li>
+                        <strong class="{% if user_answer.question.correct_answer == 'D' %}correct-answer{% elif user_answer.selected_answer == 'D' %}incorrect-answer{% endif %}">
+                            D: {{ user_answer.question.option_d }}
+                        </strong>
+                    </li>
+                </ul>
+                <p>
+                    {% if user_answer.selected_answer %}
+                    {% if user_answer.correct %}
+                    <span class="badge badge-success">Correct</span>
+                    {% else %}
+                    <span class="badge badge-danger">Incorrect</span>
+                    {% endif %}
+                    {% else %}
+                    <span class="badge badge-warning">Did not answer</span>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="text-center">
+        <a href="{% url 'dashboard' %}" class="btn btn-primary">Go Back to Dashboard</a>
+    </div>
+</div>
 </body>
 </html>
