@@ -10,7 +10,7 @@ class TopicAdmin(admin.ModelAdmin):
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('question_text', 'topic', 'option_a', 'option_b', 'option_c', 'option_d', 'correct_answer')
+    list_display = ('id', 'question_text', 'topic', 'option_a', 'option_b', 'option_c', 'option_d', 'correct_answer')
     list_filter = ('topic',)
     search_fields = ('question_text', 'option_a', 'option_b', 'option_c', 'option_d')
 

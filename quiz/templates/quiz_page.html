@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz on {{ topic.name }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        body {
+            background: linear-gradient(to right, #f7f7f7, #e3e3e3);
+        }
         .fixed-header {
             position: sticky;
             top: 0;
-            background-color: #f8f9fa;
+            background-color: #6c757d;
             padding: 10px;
             z-index: 1000;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .fixed-header h1 {
             margin-bottom: 0;
+            color: #ffd700;
         }
         .timer {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #757575;
+            color: #ffd700;
         }
         .quiz-container {
             background-color: #ffffff;
@@ -34,6 +41,11 @@
             border-radius: 8px;
             padding: 15px;
             margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         .question-card h5 {
             color: #495057;
@@ -47,55 +59,60 @@
             padding: 10px;
             background-color: #f8f9fa;
             margin-bottom: 5px;
+            transition: background-color 0.3s;
+        }
+        .option-card:hover {
+            background-color: #d1ecf1;
         }
         .btn-submit {
-            background-color: #757575;
+            background-color: #218838;
             color: #ffffff;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             font-size: 1.1rem;
+            transition: background-color 0.3s;
         }
         .btn-submit:hover {
-            background-color: #218838;
+            background-color: #19692c;
         }
     </style>
 </head>
 <body>
-<div class="fixed-header text-center">
-    <h1>Quiz on {{ topic.name }}</h1>
-    <div class="timer" id="timer">10:00</div>
-</div>
-<div class="container quiz-container mt-4">
-    <form id="quiz-form" method="post" action="{% url 'quiz-result' topic_name=topic.name %}">
-        {% csrf_token %}
-        {% for question in questions %}
-        <div class="question-card">
-            <h5>{{ forloop.counter }}. {{ question.question_text }}</h5>
-            <div class="option-card">
-                <input type="radio" name="question{{ question.id }}" value="A" id="q{{ question.id }}a">
-                <label class="option-label" for="q{{ question.id }}a">{{ question.option_a }}</label>
+    <div class="fixed-header text-center">
+        <h1>Quiz on {{ topic.name }}</h1>
+        <div class="timer" id="timer">10:00</div>
+    </div>
+    <div class="container quiz-container mt-4">
+        <form id="quiz-form" method="post" action="{% url 'quiz-result' topic_name=topic.name %}">
+            {% csrf_token %}
+            {% for question in questions %}
+            <div class="question-card">
+                <h5>{{ forloop.counter }}. {{ question.question_text }}</h5>
+                <div class="option-card">
+                    <input type="radio" name="question{{ question.id }}" value="A" id="q{{ question.id }}a">
+                    <label class="option-label" for="q{{ question.id }}a">{{ question.option_a }}</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" name="question{{ question.id }}" value="B" id="q{{ question.id }}b">
+                    <label class="option-label" for="q{{ question.id }}b">{{ question.option_b }}</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" name="question{{ question.id }}" value="C" id="q{{ question.id }}c">
+                    <label class="option-label" for="q{{ question.id }}c">{{ question.option_c }}</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" name="question{{ question.id }}" value="D" id="q{{ question.id }}d">
+                    <label class="option-label" for="q{{ question.id }}d">{{ question.option_d }}</label>
+                </div>
             </div>
-            <div class="option-card">
-                <input type="radio" name="question{{ question.id }}" value="B" id="q{{ question.id }}b">
-                <label class="option-label" for="q{{ question.id }}b">{{ question.option_b }}</label>
+            {% endfor %}
+            <input type="hidden" name="time_taken" id="time-taken">
+            <div class="text-center mt-4">
+                <button type="submit" class="btn-submit">Submit</button>
             </div>
-            <div class="option-card">
-                <input type="radio" name="question{{ question.id }}" value="C" id="q{{ question.id }}c">
-                <label class="option-label" for="q{{ question.id }}c">{{ question.option_c }}</label>
-            </div>
-            <div class="option-card">
-                <input type="radio" name="question{{ question.id }}" value="D" id="q{{ question.id }}d">
-                <label class="option-label" for="q{{ question.id }}d">{{ question.option_d }}</label>
-            </div>
-        </div>
-        {% endfor %}
-        <input type="hidden" name="time_taken" id="time-taken">
-        <div class="text-center mt-4">
-            <button  type="submit" class="btn-submit">Submit</button>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 
 <script>
     let timeLeft = 10 * 60; // 10 minutes in seconds

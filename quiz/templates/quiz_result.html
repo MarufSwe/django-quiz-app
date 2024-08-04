@@ -5,47 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Results</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        body {
+            background: linear-gradient(to right, #f7f7f7, #e3e3e3);
+        }
         .fixed-top-content {
             position: sticky;
             top: 0;
-            background-color: white;
-            z-index: 1000;
+            background-color: #6c757d;
+            color: #fff;
             padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .fixed-top-content h1 {
+            margin-bottom: 0;
+            color: #ffd700;
+        }
+        .alert-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border-color: #bee5eb;
         }
         .scrollable-questions {
             max-height: calc(100vh - 160px);
             overflow-y: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .question-card {
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         .correct-answer {
-            color: green;
+            color: #28a745;
             font-weight: bold;
         }
         .incorrect-answer {
-            color: red;
+            color: #dc3545;
             font-weight: bold;
         }
         .no-answer {
-            color: yellow;
+            color: #ffc107;
             font-weight: bold;
+        }
+        .badge-success {
+            background-color: #28a745;
+        }
+        .badge-danger {
+            background-color: #dc3545;
+        }
+        .badge-warning {
+            background-color: #ffc107;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
         }
     </style>
 </head>
 <body>
-<div class="container my-5">
-    <div class="fixed-top-content">
-        <h1 class="text-center mb-4">Results for {{ topic.name }}</h1>
-        <div class="alert alert-info text-center">
-            <h4>Your Score: {{ score }} out of {{ total_questions }}</h4>
-            <p>Time Taken: {{ time_taken }}</p>
+    <div class="container my-5">
+        <div class="fixed-top-content text-center">
+            <h1>Results for {{ topic.name }}</h1>
+            <div class="alert alert-info text-center">
+                <h4>Your Score: {{ score }} out of {{ total_questions }}</h4>
+                <p>Time Taken: {{ time_taken }}</p>
+            </div>
         </div>
-    </div>
 
-    <div class="scrollable-questions mb-4">
-        {% for user_answer in user_answers %}
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">{{ forloop.counter }}. {{ user_answer.question.question_text }}</h5>
+        <div class="scrollable-questions mb-4">
+            {% for user_answer in user_answers %}
+            <div class="question-card">
+                <h5>{{ forloop.counter }}. {{ user_answer.question.question_text }}</h5>
                 <ul class="list-unstyled">
                     <li>
                         <strong class="{% if user_answer.question.correct_answer == 'A' %}correct-answer{% elif user_answer.selected_answer == 'A' %}incorrect-answer{% endif %}">
@@ -80,13 +130,12 @@
                     {% endif %}
                 </p>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
 
-    <div class="text-center">
-        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Go Back to Dashboard</a>
+        <div class="text-center">
+            <a href="{% url 'dashboard' %}" class="btn-secondary">Go Back to Dashboard</a>
+        </div>
     </div>
-</div>
 </body>
 </html>
