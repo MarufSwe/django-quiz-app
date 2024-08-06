@@ -6,39 +6,53 @@
     <title>Quiz Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to right, #f7f7f7, #e3e3e3);
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
         }
         .card {
             border: none;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
             cursor: pointer;
             overflow: hidden;
+            animation: gradientShift 10s ease infinite;
         }
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.8);
         }
         .card-body {
-            padding: 2rem;
+            padding: 2.5rem;
+            text-align: center;
         }
         .card-title {
-            font-size: 1.5rem;
-            margin-top: 1rem;
+            font-size: 1.75rem;
+            margin: 1.5rem 0;
             color: #fff;
             transition: color 0.3s;
         }
         .card i {
-            font-size: 3rem;
-            transition: color 0.3s, transform 0.3s;
+            font-size: 3.5rem;
+            transition: color 0.3s, transform 0.3s, filter 0.3s;
             color: #fff;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
         }
         .card:hover .card-title, .card:hover i {
-            color: #ffd700; /* Gold color on hover */
-            transform: scale(1.1);
+            color: #ffd700;
+            transform: scale(1.1) rotate(10deg);
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
         }
         .python-card {
             background: linear-gradient(45deg, #306998, #f0db4f);
@@ -49,11 +63,26 @@
         .c-card {
             background: linear-gradient(45deg, #795548, #aeea00);
         }
+        .php-card {
+            background: linear-gradient(45deg, #f9a825, #9e9e9e);
+        }
+        .mysql-card {
+            background: linear-gradient(45deg, #9e9e9e, #795548);
+        }
         .html-card {
             background: linear-gradient(45deg, #e44d26, #607d8b);
         }
         .css-card {
             background: linear-gradient(45deg, #4caf50, #f44336);
+        }
+        @keyframes gradientShift {
+            0% { background: linear-gradient(45deg, #306998, #f0db4f); }
+            50% { background: linear-gradient(45deg, #f0db4f, #306998); }
+            100% { background: linear-gradient(45deg, #306998, #f0db4f); }
+        }
+        footer {
+            font-size: 1rem;
+            color: #333;
         }
     </style>
 </head>
@@ -63,7 +92,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card python-card" onclick="window.location.href='{% url 'quiz-view' topic_name='Python' %}'">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <i class="fab fa-python"></i>
                         <h5 class="card-title">Python</h5>
                     </div>
@@ -71,7 +100,7 @@
             </div>
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card java-card" onclick="window.location.href='{% url 'quiz-view' topic_name='Java' %}'">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <i class="fab fa-java"></i>
                         <h5 class="card-title">Java</h5>
                     </div>
@@ -79,31 +108,49 @@
             </div>
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card c-card" onclick="window.location.href='{% url 'quiz-view' topic_name='C' %}'">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <i class="fas fa-code"></i>
                         <h5 class="card-title">C</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card php-card" onclick="window.location.href='{% url 'quiz-view' topic_name='PHP' %}'">
+                    <div class="card-body">
+                        <i class="fab fa-php"></i>
+                        <h5 class="card-title">PHP</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card mysql-card" onclick="window.location.href='{% url 'quiz-view' topic_name='MySQL' %}'">
+                    <div class="card-body">
+                        <i class="fa fa-database" aria-hidden="true"></i>
+                        <h5 class="card-title">MySQL</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card html-card" onclick="window.location.href='{% url 'quiz-view' topic_name='HTML' %}'">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <i class="fab fa-html5"></i>
                         <h5 class="card-title">HTML</h5>
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card css-card" onclick="window.location.href='{% url 'quiz-view' topic_name='CSS' %}'">
-                    <div class="card-body text-center">
-                        <i class="fab fa-html5"></i>
+                    <div class="card-body">
+                        <i class="fab fa-css3-alt"></i>
                         <h5 class="card-title">CSS</h5>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <footer class="text-center mt-5 mb-3">
+        <p>&copy; 2024 Biponno. All rights reserved.</p>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
