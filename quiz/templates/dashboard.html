@@ -47,10 +47,13 @@
             background: linear-gradient(45deg, #5382a1, #f8c146);
         }
         .c-card {
-            background: linear-gradient(45deg, #a8b9cc, #5a5a5a);
+            background: linear-gradient(45deg, #795548, #aeea00);
         }
         .html-card {
-            background: linear-gradient(45deg, #e44d26, #f1c40f);
+            background: linear-gradient(45deg, #e44d26, #607d8b);
+        }
+        .css-card {
+            background: linear-gradient(45deg, #4caf50, #f44336);
         }
     </style>
 </head>
@@ -87,6 +90,15 @@
                     <div class="card-body text-center">
                         <i class="fab fa-html5"></i>
                         <h5 class="card-title">HTML</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card css-card" onclick="window.location.href='{% url 'quiz-view' topic_name='CSS' %}'">
+                    <div class="card-body text-center">
+                        <i class="fab fa-html5"></i>
+                        <h5 class="card-title">CSS</h5>
                     </div>
                 </div>
             </div>

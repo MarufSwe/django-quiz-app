@@ -10,32 +10,37 @@
         body {
             background: linear-gradient(to right, #f7f7f7, #e3e3e3);
         }
-        .fixed-top-content {
+        .fixed-header {
             position: sticky;
             top: 0;
             background-color: #6c757d;
+            padding: 10px;
+            z-index: 1000;
             color: #fff;
-            padding: 10px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .fixed-top-content h1 {
+        .fixed-header h1 {
             margin-bottom: 0;
             color: #ffd700;
         }
-        .alert-info {
-            background-color: #d1ecf1;
-            color: #0c5460;
-            border-color: #bee5eb;
-        }
-        .scrollable-questions {
-            max-height: calc(100vh - 160px);
-            overflow-y: auto;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-        .question-card {
+<!--        .fixed-top-content {-->
+<!--            position: sticky;-->
+<!--            top: 0;-->
+<!--            background-color: #6c757d;-->
+<!--            z-index: 1000;-->
+<!--            padding: 10px 0;-->
+<!--            color: #fff;-->
+<!--            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+        .fixed-top-content h1,
+<!--        .fixed-top-content .alert {-->
+<!--            color: #ffd700;-->
+<!--        }-->
+<!--        .scrollable-questions {-->
+<!--            max-height: calc(100vh - 160px);-->
+<!--            overflow-y: auto;-->
+<!--        }-->
+        .card {
             background-color: #e9ecef;
             border: 1px solid #dee2e6;
             border-radius: 8px;
@@ -43,20 +48,23 @@
             margin-bottom: 20px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .question-card:hover {
+        .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
+        .card-title {
+            color: #495057;
+        }
         .correct-answer {
-            color: #28a745;
+            color: green;
             font-weight: bold;
         }
         .incorrect-answer {
-            color: #dc3545;
+            color: red;
             font-weight: bold;
         }
         .no-answer {
-            color: #ffc107;
+            color: orange;
             font-weight: bold;
         }
         .badge-success {
@@ -67,10 +75,11 @@
         }
         .badge-warning {
             background-color: #ffc107;
+            color: #212529;
         }
         .btn-secondary {
             background-color: #6c757d;
-            color: #ffffff;
+            color: #fff;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -83,58 +92,62 @@
     </style>
 </head>
 <body>
-    <div class="container my-5">
-        <div class="fixed-top-content text-center">
-            <h1>Results for {{ topic.name }}</h1>
-            <div class="alert alert-info text-center">
-                <h4>Your Score: {{ score }} out of {{ total_questions }}</h4>
-                <p>Time Taken: {{ time_taken }}</p>
-            </div>
-        </div>
 
-        <div class="scrollable-questions mb-4">
+
+    <div class="fixed-header text-center">
+        <h1>Results for {{ topic.name }}</h1>
+        <div>
+            <h5>Your Score: {{ score }} out of {{ total_questions }}</h5>
+            <p>Time Taken: {{ time_taken }}</p>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="scrollable-questions">
             {% for user_answer in user_answers %}
-            <div class="question-card">
-                <h5>{{ forloop.counter }}. {{ user_answer.question.question_text }}</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <strong class="{% if user_answer.question.correct_answer == 'A' %}correct-answer{% elif user_answer.selected_answer == 'A' %}incorrect-answer{% endif %}">
-                            A: {{ user_answer.question.option_a }}
-                        </strong>
-                    </li>
-                    <li>
-                        <strong class="{% if user_answer.question.correct_answer == 'B' %}correct-answer{% elif user_answer.selected_answer == 'B' %}incorrect-answer{% endif %}">
-                            B: {{ user_answer.question.option_b }}
-                        </strong>
-                    </li>
-                    <li>
-                        <strong class="{% if user_answer.question.correct_answer == 'C' %}correct-answer{% elif user_answer.selected_answer == 'C' %}incorrect-answer{% endif %}">
-                            C: {{ user_answer.question.option_c }}
-                        </strong>
-                    </li>
-                    <li>
-                        <strong class="{% if user_answer.question.correct_answer == 'D' %}correct-answer{% elif user_answer.selected_answer == 'D' %}incorrect-answer{% endif %}">
-                            D: {{ user_answer.question.option_d }}
-                        </strong>
-                    </li>
-                </ul>
-                <p>
-                    {% if user_answer.selected_answer %}
-                    {% if user_answer.correct %}
-                    <span class="badge badge-success">Correct</span>
-                    {% else %}
-                    <span class="badge badge-danger">Incorrect</span>
-                    {% endif %}
-                    {% else %}
-                    <span class="badge badge-warning">Not Answered</span>
-                    {% endif %}
-                </p>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ forloop.counter }}. {{ user_answer.question.question_text }}</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <strong class="{% if user_answer.question.correct_answer == 'A' %}correct-answer{% elif user_answer.selected_answer == 'A' %}incorrect-answer{% endif %}">
+                                A: {{ user_answer.question.option_a }}
+                            </strong>
+                        </li>
+                        <li>
+                            <strong class="{% if user_answer.question.correct_answer == 'B' %}correct-answer{% elif user_answer.selected_answer == 'B' %}incorrect-answer{% endif %}">
+                                B: {{ user_answer.question.option_b }}
+                            </strong>
+                        </li>
+                        <li>
+                            <strong class="{% if user_answer.question.correct_answer == 'C' %}correct-answer{% elif user_answer.selected_answer == 'C' %}incorrect-answer{% endif %}">
+                                C: {{ user_answer.question.option_c }}
+                            </strong>
+                        </li>
+                        <li>
+                            <strong class="{% if user_answer.question.correct_answer == 'D' %}correct-answer{% elif user_answer.selected_answer == 'D' %}incorrect-answer{% endif %}">
+                                D: {{ user_answer.question.option_d }}
+                            </strong>
+                        </li>
+                    </ul>
+                    <p>
+                        {% if user_answer.selected_answer %}
+                        {% if user_answer.correct %}
+                        <span class="badge badge-success">Correct</span>
+                        {% else %}
+                        <span class="badge badge-danger">Incorrect</span>
+                        {% endif %}
+                        {% else %}
+                        <span class="badge badge-warning">Not Answered</span>
+                        {% endif %}
+                    </p>
+                </div>
             </div>
             {% endfor %}
         </div>
 
-        <div class="text-center">
-            <a href="{% url 'dashboard' %}" class="btn-secondary">Go Back to Dashboard</a>
+        <div class="text-center mt-4 mb-4">
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Go Back to Dashboard</a>
         </div>
     </div>
 </body>
