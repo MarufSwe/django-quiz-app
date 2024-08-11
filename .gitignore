@@ -1,11 +1,11 @@
+# Ignore virtual environment directories
 venv/
-/venv/
-venv/*
-
 env/
-/env/
-env/*
 
-
+# Ignore specific IDE configurations
 .idea/
-.idea
+
+# Ignore everything in the above directories
+venv/*
+env/*
+.idea/*
