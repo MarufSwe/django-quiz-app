@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4%jud0tu&*porswoml=4%5p9f@_ncnd8&u$*&$i0!ef4s#5j=(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['quiz.biponno.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
