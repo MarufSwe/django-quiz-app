@@ -1,0 +1,325 @@
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][824303] Child process with pid: 824322 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][824303] Child process with pid: 824337 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][828290] Child process with pid: 828416 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][828290] Child process with pid: 828541 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][828290] Child process with pid: 840922 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][841008] Child process with pid: 841135 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][845792] Child process with pid: 845849 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][845792] Child process with pid: 845872 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][845792] Child process with pid: 846422 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][845792] Child process with pid: 846463 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][854182] Child process with pid: 854211 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][854182] Child process with pid: 854217 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][858768] Child process with pid: 858809 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][858768] Child process with pid: 858850 was killed by signal: 15, core dumped: no
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py'
+[UID:1751][888282] Child process with pid: 888312 was killed by signal: 15, core dumped: no
+Invalid HTTP_HOST header: 'quiz.biponno.com'. You may need to add 'quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'quiz.biponno.com'. You may need to add 'quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'quiz.biponno.com'. You may need to add 'quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'quiz.biponno.com'. You may need to add 'quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Invalid HTTP_HOST header: 'quiz.biponno.com'. You may need to add 'quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'quiz.biponno.com'. You may need to add 'quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /your-background-image.jpg
+Not Found: /favicon.ico
+Not Found: /your-background-image.jpg
+Not Found: /favicon.ico
+Not Found: /your-background-image.jpg
+Not Found: /your-background-image.jpg
+Not Found: /favicon.ico
+Not Found: /wp-admin/setup-config.php
+Not Found: /wordpress/wp-admin/setup-config.php
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /Public/home/js/check.js
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /Public/home/js/check.js
+Not Found: /static/admin/javascript/hetong.js
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /static/admin/javascript/hetong.js
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /your-background-image.jpg
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /your-background-image.jpg
+Not Found: /favicon.ico
+Not Found: /your-background-image.jpg
+Not Found: /your-background-image.jpg
+Not Found: /your-background-image.jpg
+Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.quiz.biponno.com'. You may need to add 'www.quiz.biponno.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /favicon.ico
+Not Found: /your-background-image.jpg
+Not Found: /your-background-image.jpg
+Not Found: /your-background-image.jpg
+Not Found: /your-background-image.jpg
+Not Found: /favicon.ico
+Not Found: /your-background-image.jpg
+Not Found: /your-background-image.jpg
+Traceback (most recent call last):
+  File "/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py", line 11, in <module>
+    application = get_wsgi_application()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/conf/__init__.py", line 81, in __getattr__
+    self._setup(name)
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/conf/__init__.py", line 68, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/conf/__init__.py", line 166, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1074, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1004, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/biponno/quiz.biponno.com/django_quiz/config/settings.py", line 273
+    >>>>>>> 402f2fb3e24b2858a39ff8144abf0b4d55b37ef4
+              ^
+SyntaxError: invalid decimal literal
+Traceback (most recent call last):
+  File "/home/biponno/quiz.biponno.com/django_quiz/passenger_wsgi.py", line 11, in <module>
+    application = get_wsgi_application()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/conf/__init__.py", line 81, in __getattr__
+    self._setup(name)
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/conf/__init__.py", line 68, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/biponno/virtualenv/quiz.biponno.com/django_quiz/3.11/lib/python3.11/site-packages/django/conf/__init__.py", line 166, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1074, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1004, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/biponno/quiz.biponno.com/django_quiz/config/settings.py", line 273
+    >>>>>>> 402f2fb3e24b2858a39ff8144abf0b4d55b37ef4
+              ^
+SyntaxError: invalid decimal literal
+[UID:1751][766739] Child process with pid: 766817 was killed by signal: 15, core dumped: no
